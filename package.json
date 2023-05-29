@@ -1,0 +1,70 @@
+{
+  "name": "abrar-runccpp-vsce",
+  "displayName": "Run C/C++",
+  "publisher": "AbrarShakhi",
+  "description": "Run C/C++/C# files",
+  "bugs": {
+    "type": "git",
+    "url": "https://github.com/AbrarShakhi/runccpp-vsce/issues"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AbrarShakhi/runccpp-vsce"
+  },
+  "icon": "img/icon.png",
+  "keywords": [
+    "C",
+    "C plus plus"
+  ],
+  "version": "0.6.0",
+  "engines": {
+    "vscode": "^1.78.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./src/extention.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "abrar-runccpp.run",
+        "title": "Run C/C++/C# file"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "abrar-runccpp.run",
+        "key": "ctrl+alt+C",
+        "when": "editorLangId == c"
+      },
+      {
+        "command": "abrar-runccpp.run",
+        "key": "ctrl+alt+C",
+        "when": "editorLangId == csharp"
+      },
+      {
+        "command": "abrar-runccpp.run",
+        "key": "ctrl+alt+C",
+        "when": "editorLangId == cpp"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.78.0",
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "eslint": "^8.39.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^5.0.4",
+    "@vscode/test-electron": "^2.3.0"
+  }
+}
