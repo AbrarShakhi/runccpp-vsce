@@ -1,4 +1,4 @@
-# Run C/C++
+# Run C/C++/C#
 
 - `ctrl+alt+C` to run
 - or go to `Command Pallette` search `Run C/C++/C#` then click it.

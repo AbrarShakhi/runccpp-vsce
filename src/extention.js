@@ -2,18 +2,18 @@
 const vscode = require("vscode");
 const path = require("path");
 
-let statusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right);
-statusBarItem.text = "$(play)";
-statusBarItem.tooltip = "Run C/C++/C# file";
-statusBarItem.command = "abrar-runccpp.run";
-statusBarItem.color = "black";
+// let statusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right);
+// statusBarItem.text = "$(play)";
+// statusBarItem.tooltip = "Run C/C++/C# file";
+// statusBarItem.command = "abrar-runccpp.run";
+// statusBarItem.color = "black";
 
 /**
  * @param {vscode.ExtensionContext} context
  */
 
-export function activate(context) {
-    statusBarItem.show();
+function activate(context) {
+    // statusBarItem.show();
 
     let runCCpp = vscode.commands.registerCommand("abrar-runccpp.run", function () {
 
@@ -55,11 +55,11 @@ export function activate(context) {
     });
 
     context.subscriptions.push(runCCpp);
-    context.subscriptions.push(statusBarItem);
+    // context.subscriptions.push(statusBarItem);
 }
 
 function deactivate() {
-    statusBarItem.dispose();
+    // statusBarItem.dispose();
 }
 
 module.exports = {
