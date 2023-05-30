@@ -1,14 +1,21 @@
 # Run C/C++/C#
 
-- `ctrl+alt+C` to run
-- or go to `Command Pallette` search `Run C/C++/C#` then click it.
 
-I made this extention to run my own C/C++/C# file. You can install it too.
-report bugs/issues here [github](https://github.com/AbrarShakhi/runccpp-vsce/issues)
+## how to run?
+First open a `C`, `C++` file or `C#` project
+- use shortcut Ctrl+Alt+C
+- right click the Text Editor and then click `Compile and run` in editor context menu
+- click `Compile and run` button in editor title menu
 
-! Extention runs some command in terminal
+----
 
-* Those are the command
+## Demo
+
+![demo](media/screenshots/demo.gif)
+
+----
+
+! this is the code that is executed in the terminal
 ``` js
 if (fileExt === '.c') {
     terminal.show();
@@ -26,3 +33,8 @@ else if (fileExt === '.cs') {
     terminal.sendText(`dotnet run;`);
 }
 ```
+
+----
+
+I made this extention to run my own C/C++/C# file. You can install it too.
+report bugs/issues here [github](https://github.com/AbrarShakhi/runccpp-vsce/issues)

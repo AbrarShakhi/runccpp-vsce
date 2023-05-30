@@ -7,12 +7,12 @@
     "type": "git",
     "url": "https://github.com/AbrarShakhi/runccpp-vsce/issues"
   },
-  "license": "MIT",
+  "license": "GNU",
   "repository": {
     "type": "git",
     "url": "https://github.com/AbrarShakhi/runccpp-vsce"
   },
-  "icon": "img/icon.png",
+  "icon": "./media/icons/icon.png",
   "keywords": [
     "C",
     "C plus plus"
@@ -30,24 +30,39 @@
     "commands": [
       {
         "command": "abrar-runccpp.run",
-        "title": "Run C/C++/C# file"
+        "category": "Run CPS",
+        "icon": "$(debug-console)",
+        "title": "Compile and run"
       }
     ],
+    "menus": {
+      "editor/title/run": [
+        {
+          "command": "abrar-runccpp.run",
+          "when": "resourceLangId == c || resourceLangId == cpp || resourceLangId == csharp",
+          "group": "navigation"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "abrar-runccpp.run",
+          "when": "resourceLangId == c || resourceLangId == cpp || resourceLangId == csharp",
+          "group": "navigation"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "abrar-runccpp.run",
+          "when": "resourceLangId == c || resourceLangId == cpp || resourceLangId == csharp",
+          "group": "navigation"
+        }
+      ]
+    },
     "keybindings": [
       {
         "command": "abrar-runccpp.run",
         "key": "ctrl+alt+C",
-        "when": "editorLangId == c"
-      },
-      {
-        "command": "abrar-runccpp.run",
-        "key": "ctrl+alt+C",
-        "when": "editorLangId == csharp"
-      },
-      {
-        "command": "abrar-runccpp.run",
-        "key": "ctrl+alt+C",
-        "when": "editorLangId == cpp"
+        "when": "editorLangId == c || editorLangId == cpp || editorLangId == csharp"
       }
     ]
   },
