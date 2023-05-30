@@ -12,7 +12,7 @@
     "type": "git",
     "url": "https://github.com/AbrarShakhi/runccpp-vsce"
   },
-  "icon": "./media/icons/icon.png",
+  "icon": "media/icons/icon.png",
   "keywords": [
     "C",
     "C plus plus"
