@@ -1,11 +1,14 @@
 # Change Log
 
 [new release]
+## version (1.2.0) [07/30/2023]
+- bug fixed
+
+----
+
 ## version (1.1.0) [07/30/2023]
 - bug fixed
 - It now can run in Command prompt
-
-----
 
 ## version (1.0.0) [05/30/2023]
 - bug fixed

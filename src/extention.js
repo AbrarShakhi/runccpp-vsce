@@ -24,9 +24,9 @@ function CompileAndRun_Else(fPath, fName, fExt) {
     let runCommand = `cd "${fPath.substring(0, fPath.lastIndexOf("\\"))}"; `;
 
     if (fExt === '.c') {
-        runCommand = runCommand + `gcc "${fPath}" -o "${fName}"; clear; ./"${fName}"`;
+        runCommand = runCommand + `clear; gcc "${fPath}" -o "${fName}"; ./"${fName}"`;
     } else if (fExt === '.cpp') {
-        runCommand = runCommand + `g++ "${fPath}" -o "${fName}"; clear; ./"${fName}"`;
+        runCommand = runCommand + `clear; g++ "${fPath}" -o "${fName}"; ./"${fName}"`;
     } else if (fExt === '.cs') {
         runCommand = runCommand + 'clear; dotnet run';
     }
