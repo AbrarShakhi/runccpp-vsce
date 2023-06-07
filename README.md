@@ -17,21 +17,18 @@ First open a `C`, `C++` file or `C#` project
 
 ! this is the code that is executed in the terminal
 ``` js
-if (fileExt === '.c') {
-    terminal.show();
-    terminal.sendText(`cd "${filePath.substring(0, filePath.lastIndexOf("\\"))}";`);
-    terminal.sendText(`gcc "${filePath}" -o "${fileName}"; ./"${fileName}";`);
+let runCommand = `cd "${fPath.substring(0, fPath.lastIndexOf("\\"))}"; `;
+
+if (fExt === '.c') {
+    runCommand = runCommand + `gcc "${fPath}" -o "${fName}"; clear; ./"${fName}"`;
+} else if (fExt === '.cpp') {
+    runCommand = runCommand + `g++ "${fPath}" -o "${fName}"; clear; ./"${fName}"`;
+} else if (fExt === '.cs') {
+    runCommand = runCommand + 'clear; dotnet run';
 }
-else if (fileExt === '.cpp') {
-    terminal.show();
-    terminal.sendText(`cd "${filePath.substring(0, filePath.lastIndexOf("\\"))}";`);
-    terminal.sendText(`g++ "${filePath}" -o "${fileName}"; ./"${fileName}";`);
-}
-else if (fileExt === '.cs') {
-    terminal.show();
-    terminal.sendText(`cd "${filePath.substring(0, filePath.lastIndexOf("\\"))}";`);
-    terminal.sendText(`dotnet run;`);
-}
+
+terminal.show();
+terminal.sendText(runCommand);
 ```
 
 ----

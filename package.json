@@ -15,7 +15,10 @@
   "icon": "media/icons/icon.png",
   "keywords": [
     "C",
-    "C plus plus"
+    "run",
+    "Compile",
+    "C plus plus",
+    "C sharp"
   ],
   "version": "1.0.0",
   "engines": {
