@@ -1,0 +1,90 @@
+{
+  "name": "abrar-runccpp-vsce",
+  "displayName": "Run C/C++",
+  "publisher": "AbrarShakhi",
+  "description": "Run C, C++, C#, java, python program files",
+  "bugs": {
+    "type": "git",
+    "url": "https://github.com/AbrarShakhi/runccpp-vsce/issues"
+  },
+  "license": "GNU",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AbrarShakhi/runccpp-vsce"
+  },
+  "icon": "media/icons/icon.png",
+  "keywords": [
+    "C",
+    "run",
+    "Compile",
+    "C plus plus",
+    "C sharp",
+    "java",
+    "python"
+  ],
+  "version": "2.0.1",
+  "engines": {
+    "vscode": "^1.84.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./src/extention.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "abrar-runccpp.run",
+        "category": "Run CPS",
+        "icon": "$(debug-console)",
+        "title": "Compile and run"
+      }
+    ],
+    "menus": {
+      "editor/title/run": [
+        {
+          "command": "abrar-runccpp.run",
+          "when": "resourceLangId == c || resourceLangId == cpp || resourceLangId == csharp || resourceLangId == java || resourceLangId == python",
+          "group": "navigation"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "abrar-runccpp.run",
+          "when": "resourceLangId == c || resourceLangId == cpp || resourceLangId == csharp || resourceLangId == java || resourceLangId == python",
+          "group": "navigation"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "abrar-runccpp.run",
+          "when": "resourceLangId == c || resourceLangId == cpp || resourceLangId == csharp || resourceLangId == java || resourceLangId == python",
+          "group": "navigation"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "abrar-runccpp.run",
+        "key": "ctrl+alt+C",
+        "when": "editorLangId == c || editorLangId == cpp || editorLangId == csharp || editorLangId == java || editorLangId == python"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.78.0",
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "eslint": "^8.39.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^5.0.4",
+    "@vscode/test-electron": "^2.3.0"
+  }
+}
